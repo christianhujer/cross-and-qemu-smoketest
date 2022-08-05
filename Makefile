@@ -1,4 +1,8 @@
-ALL:=$(wildcard */)
+broken-targets:=\
+    c-m68k-linux-gcc/ \
+    c-sparc64-linux-gcc/ \
+
+ALL:=$(filter-out $(broken-targets),$(wildcard */))
 
 .PHONY: all
 all: $(addprefix all-,$(ALL))

@@ -18,7 +18,6 @@ strace: hello
 	strace -cf $(RUN)
 
 hello: hello.o
-	$(LD) -o $@ $^
 
 .PHONY: clean
 clean::
