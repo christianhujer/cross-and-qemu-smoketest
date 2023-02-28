@@ -1,4 +1,8 @@
-ALL:=$(patsubst %/Makefile,%,$(wildcard */Makefile))
+broken-targets:=\
+    c-m68k-linux-gcc/ \
+    c-sparc64-linux-gcc/ \
+
+ALL:=$(filter-out $(broken-targets),$(wildcard */))
 
 .PHONY: all
 all: $(addprefix all-,$(ALL))
@@ -11,12 +15,12 @@ strace: $(addprefix strace-,$(ALL))
 
 .PHONY: all-%
 all-%:
-	$(MAKE) -C $*
+	$(MAKE) -sC $*
 
 .PHONY: clean-%
 clean-%:
-	$(MAKE) -C $* clean
+	$(MAKE) -sC $* clean
 
 .PHONY: strace-%
 strace-%:
-	$(MAKE) -C $* strace
+	$(MAKE) -sC $* strace

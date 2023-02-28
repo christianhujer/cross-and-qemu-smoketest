@@ -7,7 +7,7 @@ all: test
 
 .PHONY: test
 test: hello
-	diff ../expected.txt <($(RUN))
+	diff ../../expected.txt <($(RUN))
 
 .PHONY: run
 run: hello
