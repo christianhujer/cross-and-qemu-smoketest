@@ -1,6 +1,7 @@
 broken-targets:=\
-    c-m68k-linux-gcc/ \
-    c-sparc64-linux-gcc/ \
+    hppa64-linux-gnu/ \
+    m68k-linux-gnu/ \
+    sparc64-linux-gnu/ \
 
 ALL:=$(filter-out $(broken-targets),$(wildcard */))
 
