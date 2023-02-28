@@ -15,12 +15,12 @@ strace: $(addprefix strace-,$(ALL))
 
 .PHONY: all-%
 all-%:
-	$(MAKE) -sC $*
+	$(MAKE) -C $*
 
 .PHONY: clean-%
 clean-%:
-	$(MAKE) -sC $* clean
+	$(MAKE) -C $* clean
 
 .PHONY: strace-%
 strace-%:
-	$(MAKE) -sC $* strace
+	$(MAKE) -C $* strace
