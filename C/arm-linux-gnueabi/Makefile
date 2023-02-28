@@ -1,3 +1,1 @@
-arch:=$(notdir $(abspath .))
-
-include ../../common.mk
+include ../common.mk

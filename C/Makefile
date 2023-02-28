@@ -3,7 +3,7 @@ broken-targets:=\
     m68k-linux-gnu/ \
     sparc64-linux-gnu/ \
 
-ALL:=$(filter-out $(broken-targets),$(wildcard */))
+ALL:=$(filter-out $(broken-targets),$(patsubst %/Makefile,%/,$(wildcard */Makefile)))
 
 .PHONY: all
 all: $(addprefix all-,$(ALL))
